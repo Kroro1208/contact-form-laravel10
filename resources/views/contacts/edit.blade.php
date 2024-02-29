@@ -10,8 +10,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <section class="text-gray-600 body-font relative">
-                        <form method="post" action="{{route('contacts.store')}}">
+                        <form method="post" action="{{route('contacts.update', ['contact'=>$contact->id])}}">
                             @csrf
+                            @method("PUT")
                             <div class="container px-5 py-10 mx-auto">
                                 <div class="flex flex-col text-center w-full mb-12">
                                     <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">お問い合わせ内容編集</h1>
