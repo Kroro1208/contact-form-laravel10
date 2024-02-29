@@ -21,7 +21,7 @@
                                         <div class="relative">
                                             <label for="name" class="leading-7 text-sm text-gray-600">お名前</label>
                                             <div class="w-full rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                            {{$contact->name}}
+                                                {{$contact->name}}
                                             </div>
                                         </div>
                                     </div>
@@ -29,7 +29,7 @@
                                         <div class="relative">
                                             <label for="email" class="leading-7 text-sm text-gray-600">メールアドレス</label>
                                             <div class="w-full rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                            {{$contact->email}}
+                                                {{$contact->email}}
                                             </div>
                                         </div>
                                     </div>
@@ -37,44 +37,41 @@
                                     <div class="p-2 w-full">
                                         <div class="relative">
                                             <label for="title" class="leading-7 text-sm text-gray-600">タイトル</label>
-                                            <div rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                            <div class="border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                {{$contact->title}}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="p-2 w-full">
                                         <div class="relative">
                                             <label for="url" class="leading-7 text-sm text-gray-600">ホームページ</label>
-                                            <input type="url" id="url" name="url" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                            <div class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                {{$contact->url ? $contact : "未入力"}}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="p-3 w-full">
                                         <div class="relative">
                                             <label class="leading-7 mr-2 text-sm text-gray-600">性別</label>
-                                            <input type="radio" id="url" name="gender" value="0">男性
-                                            <input type="radio" id="url" name="gender" value="1">女性
+                                            <div class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                {{$gender}}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="p-2 w-full">
                                         <div class="relative">
                                             <label for="age" class="leading-7 mr-2 text-sm text-gray-600 rounded">年齢</label>
-                                            <select name="age" id="" class="rounded border border-gray-300">
-                                                <option value="1">~19歳</option>
-                                                <option value="2">20~29歳</option>
-                                                <option value="3">30~39歳</option>
-                                                <option value="4">40~49歳</option>
-                                                <option value="5">50~59歳</option>
-                                                <option value="6">60歳~</option>
-                                            </select>
+                                            <div class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                {{$age}}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="p-2 w-full">
                                         <div class="relative">
                                             <label for="content" class="leading-7 text-sm text-gray-600">具体的な内容</label>
-                                            <textarea id="content" name="content" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="p-2 w-full">
-                                        <div class="relative">
-                                            <input class="mr-2 rounded" type="checkbox" id="caution" name="caution">注意事項に同意する
+                                            <div class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">
+                                                {{$contact->content}}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="p-2 w-full">
