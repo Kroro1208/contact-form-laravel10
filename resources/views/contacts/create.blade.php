@@ -22,20 +22,23 @@
                                         <div class="p-2 w-full">
                                             <div class="relative">
                                                 <label for="name" class="leading-7 text-sm text-gray-600">お名前</label>
-                                                <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                <input type="text" id="name" name="name" value="{{old('name')}}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                             </div>
                                         </div>
                                         <div class="p-2 w-full">
                                             <div class="relative">
                                                 <label for="email" class="leading-7 text-sm text-gray-600">メールアドレス</label>
-                                                <input type="text" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                <input type="text" id="email" name="email" value="{{old('email')}}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                             </div>
                                         </div>
 
                                         <div class="p-2 w-full">
                                             <div class="relative">
                                                 <label for="title" class="leading-7 text-sm text-gray-600">タイトル</label>
-                                                <input type="text" id="title" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                <input type="text" id="title" name="title" value="{{old('title')}}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                                <x-input-error :messages="$errors->get('title')" class="mt-2" />
                                             </div>
                                         </div>
                                         <div class="p-2 w-full">
@@ -47,32 +50,37 @@
                                         <div class="p-3 w-full">
                                             <div class="relative">
                                                 <label class="leading-7 mr-2 text-sm text-gray-600">性別</label>
-                                                <input type="radio" id="url" name="gender" value="0">男性
-                                                <input type="radio" id="url" name="gender" value="1">女性
+                                                <input type="radio" id="gender" name="gender" value="0" {{ old('gender') == '0' ? 'checked' : '' }}>男性
+                                                <input type="radio" id="gender" name="gender" value="1" {{old('gender') =='1' ? 'checked' : ''}}>女性
+                                                <x-input-error :messages="$errors->get('gender')" class="mt-2" />
                                             </div>
                                         </div>
                                         <div class="p-2 w-full">
                                             <div class="relative">
                                                 <label for="age" class="leading-7 mr-2 text-sm text-gray-600 rounded">年齢</label>
                                                 <select name="age" id="" class="rounded border border-gray-300">
-                                                    <option value="1">~19歳</option>
-                                                    <option value="2">20~29歳</option>
-                                                    <option value="3">30~39歳</option>
-                                                    <option value="4">40~49歳</option>
-                                                    <option value="5">50~59歳</option>
-                                                    <option value="6">60歳~</option>
+                                                    <option value="">選択してください</option>
+                                                    <option value="1" {{ old('age') == '1' ? 'selected' : '' }}>~19歳</option>
+                                                    <option value="2" {{old('age')=='2' ? 'selected' : ''}}>20~29歳</option>
+                                                    <option value="3" {{ old('age') == '3' ? 'selected' : '' }}>30~39歳</option>
+                                                    <option value="4" {{ old('age') == '4' ? 'selected' : '' }}>40~49歳</option>
+                                                    <option value="5" {{old('age')=='5' ? 'selected' : ''}}>50~59歳</option>
+                                                    <option value="6" {{ old('age') == '6' ? 'selected' : '' }}>60歳~</option>
                                                 </select>
+                                                <x-input-error :messages="$errors->get('age')" class="mt-2" />
                                             </div>
                                         </div>
-                                        <div class="p-2 w-full">
+                                        <div class="p-2 w-full mt-3">
                                             <div class="relative">
                                                 <label for="content" class="leading-7 text-sm text-gray-600">具体的な内容</label>
                                                 <textarea id="content" name="content" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                                                <x-input-error :messages="$errors->get('content')" class="mt-2" />
                                             </div>
                                         </div>
                                         <div class="p-2 w-full">
                                             <div class="relative">
                                                 <input class="mr-2 rounded" type="checkbox" id="caution" name="caution">注意事項に同意する
+                                                <x-input-error :messages="$errors->get('caution')" class="mt-2" />
                                             </div>
                                         </div>
                                         <div class="p-2 w-full">
