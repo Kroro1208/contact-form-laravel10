@@ -20,7 +20,7 @@ class ContactFormFactory extends Factory
             'name' => $this->faker->name(),
             'title' => $this->faker->realText(50),
             'email' => $this->faker->unique()->safeEmail,
-            'url' => $this->faker->url(),
+            'url' => substr($this->faker->url(), 0, 50),
             'gender' => $this->faker->boolean(),
             'age' => $this->faker->numberBetween(1, 6),
             'content' => $this->faker->realText(200),
