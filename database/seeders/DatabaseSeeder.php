@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\ContactForm;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,5 +18,6 @@ class DatabaseSeeder extends Seeder
             TestSeeder::class,
             UserSeeder::class
         ]);
+        ContactForm::factory(50)->create();
     }
 }
