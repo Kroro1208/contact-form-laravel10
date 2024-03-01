@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\ContactForm;
 use App\Services\CheckFormServices;
 use App\Http\Requests\StoreContactRequest;
+use Illuminate\Http\Request;
 
 class ContactFormController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $contacts = ContactForm::select('id', 'name', 'title', 'created_at')->paginate(20);
+        // 検索及びpaginationに対応
+        $search = $request->search; // この段階では複数キーワードで検索した場合、複数のワードが入ってくる
+        $query = ContactForm::search($search); // search()はscopeSearch()のscopeをとったもの
+        $contacts = $query->select('id', 'name', 'title', 'created_at')->paginate(20); // $query->select()で検索結果を表示
         return view('contacts.index', compact('contacts'));
     }
 

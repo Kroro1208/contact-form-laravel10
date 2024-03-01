@@ -8,8 +8,12 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <a href="{{route('contacts.create')}}" class="text-indigo-600 font-semibold">新規登録</a>
+                <div class="flex justify-between p-6 text-gray-900 dark:text-gray-100">
+                    <a href="{{route('contacts.create')}}" class="text-indigo-600 text-2xl font-semibold">新規登録</a>
+                    <form method="get" action="{{route('contacts.index')}}">
+                        <input class="rounded" type="text" name="search" placeholder="検索キーワードを入力してください">
+                        <button class="text-white bg-indigo-500 border-0 py-2 px-8 ml-2 focus:outline-none hover:bg-indigo-600 rounded text-lg">検索する</button>
+                    </form>
                 </div>
                 <div class="p-5">
                     <div class="lg:w-full w-full mx-auto overflow-auto">
