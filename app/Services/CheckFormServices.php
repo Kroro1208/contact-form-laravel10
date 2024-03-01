@@ -34,7 +34,6 @@ class CheckFormServices
         if ($contact->age === 6) {
             $age = '60歳~';
         }
-
         return $age;
     }
 }

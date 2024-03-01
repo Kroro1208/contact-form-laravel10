@@ -21,8 +21,8 @@ class ContactFormFactory extends Factory
             'title' => $this->faker->realText(50),
             'email' => $this->faker->unique()->safeEmail,
             'url' => $this->faker->url(),
-            'gender' => $this->faker->randomElement([0, 1]),
-            'age' => $this->faker->numberBetween(10, 80),
+            'gender' => $this->faker->boolean(),
+            'age' => $this->faker->numberBetween(1, 6),
             'content' => $this->faker->realText(200),
         ];
     }

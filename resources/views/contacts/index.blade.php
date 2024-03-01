@@ -11,9 +11,8 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <a href="{{route('contacts.create')}}" class="text-indigo-600 font-semibold">新規登録</a>
                 </div>
-                <div>
-
-                    <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+                <div class="p-5">
+                    <div class="lg:w-full w-full mx-auto overflow-auto">
                         <table class="table-auto w-full text-left whitespace-no-wrap">
                             <thead>
                                 <tr>
@@ -21,7 +20,8 @@
                                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">お名前</th>
                                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">タイトル</th>
                                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">登録日</th>
-                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">詳細</th>                                </tr>
+                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">詳細</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 @foreach($contacts as $contact)
@@ -36,6 +36,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{$contacts->links()}}
                 </div>
             </div>
         </div>
