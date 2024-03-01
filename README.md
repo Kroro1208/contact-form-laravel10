@@ -1,3 +1,6 @@
+検索フォーム及びpaginationの挙動確認
+![お問い合わせフォーム](./contactForm4.gif)
+
 バリデーションエラーの挙動確認
 ![お問い合わせフォーム](./contactForm3.gif)
 
